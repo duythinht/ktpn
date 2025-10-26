@@ -121,7 +121,7 @@ func KT(plateNumber string, vehicleType VehicleType) ([]Violation, error) {
 	}
 	body := strings.NewReader(data.Encode())
 
-	// don't request too fast, just sleep 2 second before get the captcha
+	// don't request too fast, just sleep 3 second after get the captcha
 	time.Sleep(3 * time.Second)
 
 	req, err := http.NewRequest(
