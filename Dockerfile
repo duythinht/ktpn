@@ -12,4 +12,4 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 COPY --from=builder /opt/bin/ktpn /usr/local/bin/ktpn
-CMD [ "ktpn" ]
+ENTRYPOINT [ "ktpn" ]
