@@ -11,7 +11,9 @@ import (
 )
 
 func main() {
-	result, err := ktpn.KT(os.Args[1], ktpn.Car)
+	result, err := ktpn.Retry(5, func() ([]ktpn.Violation, error) {
+		return ktpn.KT(os.Args[1], ktpn.Car)
+	})
 	if err != nil {
 		log.Fatal(err)
 	}
